@@ -157,12 +157,12 @@ section .col{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
     gap: 30px;
-    padding-left:20px ;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 section .col div{
     text-align: center;
+    padding: 0 10px;
 }
 section .col div span{
     color: var(--color);
@@ -217,9 +217,7 @@ section .col div p{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
     gap: 30px;
-    padding-left:20px ;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding: 70px 10px;
 }
 .Services .col h3{
     color: #222;
@@ -240,12 +238,18 @@ section .col div p{
 }
 @media(max-width:1200px){
     .col3a{
-        display: none;
+        display: block;
+    }
+    .col3a .img-after{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
     }
 }
 @media(max-width:787px){
-    .col3a{
-        display: block;
+    .col3a .img-after::after{
+        display: none;
         padding-top: 20px;
     }
 }
@@ -351,6 +355,19 @@ section .col div p{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
     gap: 30px;
+    padding-bottom: 50px;
+}
+
+@media(max-width:767px){
+    .About .flex{
+        grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    }
+}
+
+.flex1{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .About .flex img {
@@ -362,6 +379,10 @@ section .col div p{
 .flex1 .ing-after{
     position: relative;
     margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .flex1 .ing-after::after{
     content: "";
@@ -374,16 +395,15 @@ section .col div p{
     left: -50px;
 }
 
-.flex1{
-    position: relative;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
+@media(max-width:767px){
+    .flex1 .ing-after::after{
+        display: none;
+    }
 }
-.flex2{
-    width: 50%;
-    margin: auto;
 
+.flex2{
+    margin: auto;
+    padding: 0 15px;
 }
 .flex2 p:first-child{
     color: #222;
